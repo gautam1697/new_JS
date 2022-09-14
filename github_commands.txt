@@ -1,0 +1,203 @@
+1.git config -- global user.name "username"
+
+
+2.git config --global user.email "email"
+
+
+//these two commands will set the username and email of the person locally.
+3.git config --global --edit
+//this command will open global configuration file in text editor fotr manual editing
+4.git init 
+git init "directory name"
+
+//this command is used to create a local repository.
+// this command will create a .git folder in your project.
+//this will initialize an empty repo in your project
+
+
+5.git clone {URL}
+//this command will create a clone of the project from Github using URL
+
+
+6.git remote add origin
+//this command will create a remote repo pointing to the existing github repo
+
+
+7.git remote-v
+//this command will show all the names of remote repositories
+
+
+8.git remote rm (repo name)
+//this command will remove the remote repo whose name is provided
+
+
+9.git fetch
+//this command gets all the changes from the origin but does not merge
+
+
+10.git pull
+//this commands gets all the changes from the orgin and merges them
+
+
+11.git add (filename)
+//this command adds the particular file to the staging area
+
+
+12. git add .
+//this commands add the current repo in the staging area except the deleted files
+
+
+13.git add -A
+//this commands add the new,modified and deleted files to the staging area
+
+
+14. git rm (filename)
+//this commans removes the filename provided from tracking
+
+
+15.git rm --cached(filename)
+//this command untracks the current file.
+
+
+16.git diff
+//this command shows the difference  between unstaged changes in index and working directory.
+
+
+17.git diff --staged
+//this command shows difference between stating and last file version
+
+
+18.git diff (filename)
+//this command shows changes in a single file compared to last commit.
+
+
+19.git commit -m "commit-name"
+//this command in used to commit changes with custom message
+
+
+20.git commit -am
+//this command adds all the chagnes into the stating area and commits them with a custom message
+
+
+21.git checkout {branchname}
+//this command is used to switch to a particular branch
+
+
+21.git checkout -b {branchname}
+//this command is used to create a remote branch and then swtich to it
+
+
+22.git show
+//this command outputs metadata and content changes of the specific commit
+
+
+23.git reset-hard
+//this command will discard all the history and changes back to a given Commit.
+
+
+24.git reset  --hard Head
+git reset --hard {commit id}
+//this command will bring back the changes 
+//this command will discard all the local changes in working directory
+
+25.git log
+//this command shows the history of changes
+
+26.git log -p
+//this command shows full display of each commit
+
+27.git log -online
+//this command shows list of commits with a simple message
+
+28. git log --follow (filename)
+//this command shows the list of history of the current file.
+
+29.git blame(filename)
+//this command shows all the changes along with the name of the user
+
+30. git stash
+//this command temporarily saves all the modified tracked files.
+
+31.git statsh pop
+//this command restores the most recently statshed files.
+
+32.git stash list
+//this command shows the list of all the stashed changes.
+
+33.git stash apply
+//this command apply the latest statshed contents
+
+34.git statsh drop
+//this command discards the most recently stashed files
+
+35.git statsh apply(stash_ID)
+//this command is used to re-apply a specific stash content by ID.
+
+36.git stash drop(statsh_ID)
+//this command is used to drop specific stash content bt ID
+
+37.git push
+//this command adds the changes to remote repository
+
+38. git push origin {branchname}
+//this command will push the changes to the origin
+
+39.git push -f origin {branchname}
+//this command forcefully pushes the changes to the branch.
+
+40.git tag {tagname}
+//this command defined a tag for the version
+
+41.git branch
+//this command shows the list of branches
+
+42.git branch -m
+//this command is used to rename the current branch
+
+43.git branch -a
+//this command lists all the branches local and remote both
+
+44.git checkout -b origin/
+//this command will get a remote branch from origin to the local directory.
+
+45.git branch -d
+//this command will delete the current branch 
+
+46. git merge
+// this command merges the current branch into master
+//NOTE: user should be cautios before running this command.
+
+47. git rebase
+//this command takes all the changes of the branch and restate on others
+
+48. git fetch remote
+//this command fetches the specified branch from remote repo.
+
+49. git pull --rebase
+//this command fetches remote copy of the current branch and rebases it into the local copy.
+
+50.git push -all
+//this command pushes all the local branches to remoe repository
+
+
+
+
+51. git commit
+//this command is used to commit the changes made in the local repository.
+//in this command we have to press escape and then i and then add the commit message and after that
+//again press escape and ctrl+X to exit and save the commit changes
+
+52. git commit -a
+//this command is used to commit modified and deleted files if untracked files are present in 
+//project
+//this command will not commit the untracked files present in the project and will leave it untouched.
+
+53.git commit -am 'commit message'
+//this command is used to commit modified and deleted changes if untraked files are present and will only
+//commit changes that are modified and will leave the untracked files untouched.
+
+
+54. git clone -b <Branch name><Repository URL>  
+//this commadn will let to take a clone of the particular branch in a repository.
+
+55. 
