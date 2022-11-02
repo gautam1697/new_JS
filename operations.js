@@ -78,4 +78,22 @@ function* foo(index) {
   //this line will run but the value will be undefined as the index 
   //value is out of range
   
-  
+  //___________________________________________________________________________________
+  function f(){
+    return 4;
+}
+function g(){
+    return 3;
+}
+y = x = f()
+console.log(x,y)
+y = [ f(), x = g() ]
+console.log(x,y)
+//______________________________________________________________________________________
+const x=y=z=r=d=3;
+console.log(x)
+let y=32;//this line will throw an error as value of y is already defined in the lines above.
+console.log(y)
+x[f()] = g()
+x=f()
+console.log(x,y)

@@ -194,4 +194,18 @@ arr=[1,2,3,44,5,4,4,4,4]
 b=arr.splice(0,1,'gautam')//removes the first element from the index and adds a string at that place
 console.log(b)
 console.log(arr)
+//______________________________________________________________________
+// const a = [
+//   'Hydrogen',
+//   'Helium',
+//   'Lithium',
+//   'Beryllium'
+// ];
+// const a2 = a.map(function(s) { return s.length; });
+
+// console.log(a2); // logs [8, 6, 7, 9]
+
+// const a3 = a.map((s) => s.length);
+
+// console.log(a3); // logs [8, 6, 7, 9]
 
