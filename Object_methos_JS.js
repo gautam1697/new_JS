@@ -143,6 +143,8 @@ obj={name:'gautam',age:25,marks:100}
 //13.Object.getOwnPropertyDescriptors-> returns boolean value for all properties
 //if properties are enumerable,writable and configurable
 //14.Object.getOwnPropertyNames-->
+obj={role1:1,role2:2,role3:3,role4:4}
+console.log// this property returns an array of properties irrespective of wether they are enumerable or not
 //returns an array of all property keys
 //15.Object.getOwnPropertySymbols
 //returns all the symbols defined for all properties in the object
@@ -151,4 +153,14 @@ console.log(Object.getOwnPropertyDescriptor(obj,'name'))
 console.log(Object.getOwnPropertyDescriptors(obj,'name'))
 console.log(Object.getOwnPropertyNames(obj,'name'))
 console.log(Object.getOwnPropertySymbols(obj,'name'))
+//________________________________________________________________________________________________________________________
+//Getter and setter functions in objects
+const obj = {a: 7,get b() {return this.a + 1;},
+set c(x) {this.a =x / 2;}
+};
 
+console.log(obj.a); // 7
+console.log(obj.b); // 8, returned from the get b() method
+obj.c = 50;         // Calls the set c(x) method
+console.log(obj.a); // 25
+console.log(obj.b)

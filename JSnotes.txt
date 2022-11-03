@@ -1,0 +1,769 @@
+Q1. What is Javascript?
+	Ans-> Javascript is a cross platform object oriented scripting language that is used to create web pages responsive.Inside a host 	environment JS can be connected to object of its environment to provide programatic control over them.
+	 JavaScript is mostly used in developement of :
+	 a. client side logic(reactjs, nextjs, angularjs)
+	 b. server side logic(Nodejs,Expressjs,Netjs)
+NOTE: Javascript resembles to Java in naming conventions and in expression, that is why it was named from LiveScript to Javascript.
+
+Q2.State difference between Interpreted and compiled language.
+
+
+	Ans-> compiled langugage- it is a language which is generally compiled and expressed in the expression of target machine(machine 		readable binary code).This expression is undecipherable by humans.
+	interpreted language- it is a language which is interpreted without compiling the program into machine instructions.It is where 		the 		instructions are not directly executed by target machine, but read by some other program.here we use pre compiled 		bytecode along with proper virtual machine to achieve interpretation.
+`	compiled languages- 
+	a. compiled program runs faster than interpreted
+	b. errors prevent code from compiling.
+	c.cannot be changed during execution 
+	interpreted languages- 
+	a. execution of program is slower than compiled languages.
+	b.debugging can be done at runtime.
+	c.can be changed dureing execution
+			
+Q3.What is the difference between programming language and scripting language?
+	Ans-> Programming language :
+	a.is a type of computer language that consists of set of instructions for communicating with computers.
+	b.most of them are compiled
+	c.they are based on low level languages
+	d.used to create software from scratch
+	e.are self executable
+	f. create a .exe file
+	g.runs or executes independently
+	h.all programming languages are not scripting languages.
+	Scripting language:
+	a.kind of programming language used to automate the execution of operrations in runtime environement.
+	b.most of them are parsed, interpreted and then executed
+	c.most of them are high level language
+	d.it runs inside a parent program
+	e.they do not create .exe files
+	f.they require a host
+	g.all scripting languages are programming languages.
+
+Q4. Why is Javascript called JIT just in time compiled language?
+
+
+	Ans->compilation ensures that compiled code is optimized for faster execution and interpreter ensures code execution immediately 		and faster startup.JavaScript Engines are designed to leverage best of both the approaches.
+	Major steps involved in javascript execution:
+	a.code is parsed to generate intermediatery format such as abstract tree syntax which is used in optimization.
+	b.intermediatery format is translated into machine readable code by interpreter to initiate execution quickly.
+	c.execution of the generated is monitored continously and any code unit which has scope for optimization is passed through 	compilation step to generate optimized code for the same.
+	d.once optimized code is generated it is replaced by the interpreted code.
+
+Q5. Why is Javascript a single threaded language?
+
+	Ans-> JS is a single threaded language because it has only one call stack that is ued to execute program. Single threading is easy to implement and we dont have to deal with situations like deadlock.JavaScript is single threaded and therefore it is synchronous in nature.
+	
+Q6. What is the use of Async calls in Javascript?
+
+	Ans->In synchronous calls the work is done line by line i.e first one task is completed then we move onto the second task no 		matter how much time it takes.This raised problems of time ane resource wastage. These problems are sovled by asynchronous 
+	operations.These operation allows operations to perform simultanoeusly and async call is independent of tasks.We achieve asynchronous functionality of Javascript by runtime environment and event loops.
+	
+	
+Q7.Why is Javacript a dynamic language?
+
+	Ans-> because type of variable is assigned during runtime by the interpreter.
+	
+Q8. Why is JS called a lightweighted language?
+
+
+	Ans-> It is called a lightweighted language because
+	a. it is easy to implement
+	b. it has easy syntax
+	c.it requires less memory to implement and does not put excess strain on your RAM.
+	
+Javascript is implementation of ECMAScript and follows rules and guidelines to be an ECMA compliant.
+NOTE:- It is found that Node JS performs computations faster and uses less memory and resources. C++ was found to be faster and requires less memory but has high CPU usage as compared to Node JS.
+
+
+Q9. What are statements in JavaScript?
+
+	Ans->Set of instructions seperated by semicolon(;) are called statements.
+	
+	
+Q10.What is the difference between let,var and const?
+	Ans-> 
+	a.var-declares a varibale(globally-scoped or function-scoped),optionally initializing its value.
+	
+	b.let-declares a block-scoped local variable,optionally initializing its value. once a variable is declared using let keyword  
+	cannot be redeclared but can be reninitialized and the value of variable can be changed.
+	
+	c.const- declares a block-scoped read only variable.
+
+Q11. Why do we use a keyword to declare a variable when can declare variable without using keyword?
+
+	Ans->In the global context a variable delared using var is added as non-configurable property of global object.It means property 		descriptor cannot be changed and it cannot be deleted using delete keyword. The corresponding name is also added to the list on 	     internal slot on global enivronment record
+	
+	var x = 1;
+	Object.hasOwn(globalThis, 'x'); // this will return false
+	delete x;
+	y = 2;
+	Object.hasOwn(globalThis, 'y'); // this will return true because varibale is not defined using a keyword
+	delete y;
+Note:- run this code on browser console which will return the values. running in online compiler will not fetch results.
+
+Q12. How does var hosting work in Javascript?
+
+	Ans->
+	//var bla=2;
+	var bla;
+	console.log(bla)//output-> bla is undefined because 
+
+
+	var bla;	
+	var bla=45;
+	console.log(bla)
+	console.log(bla)//output-> these two lines will print 45,45 as the value of bla is first declared and then initilized using var 		keyword.
+
+Q13. What is the difference between let and var?
+
+	Ans->The let and var works in the same way but we can redeclare var but we cannot redeclare let.We can reinitialize both let and 		var, but var is globally scoped and let is limited to local scope. This can be understood by the example shown below
+	
+	function varTest() {
+  	var x = 1;
+  	{
+   	 var x = 2;  // same variable!
+   	 console.log(x);  // 2
+ 	}
+  	console.log(x);  // 2
+	}
+
+	function letTest() {
+  	let x = 1;
+ 	 {
+   	 let x = 2;  // different variable
+   	 console.log(x);  // 2
+  	}
+  	console.log(x);  // 1
+	}
+	varTest();//output-> 2,2
+	letTest();//output->2,1
+
+	var x= 'global'
+	let y='global'
+	console.log(this.x)//this will print global as var is globally scoped
+	console.log(this.y)//this will print undefined as let is locally scoped
+
+Q14. What is a temporal dead zone?
+
+	Ans-> A let or const variable is said to be in a temporal dead zone from the start of the block until code execution reaches the 		line where code is delared and initialized.In TDZ if we attempt to access any variable, it will result in Temporal Dead Zone.
+	
+Q15. What is a lexical environment and lexical scoping?
+
+	Ans->A lexical environment is a data structure that holds identifier-variable mapping. (here identifier refers to the name of 		variables/functions, and the variable is the reference to actual object [including function object or primitive value].
+
+	Lexical in general means in hierarchy or in a sequence.Whenever a new execution context(EC) is created a new lexical 		environment  is created and it is referenced in local EC in memory space.
+	
+	Lexical scoping, also known as static scoping, is a convention used with many modern programming languages. It refers to setting 		the scope, or range of functionality, of a variable so that it may be called (referenced) from within the block of code in which 		it is defined.
+Q16. What is a block statement?
+
+	Ans->The most basic statement is a block statement, which is used to group statements. The block is delimited by a pair of curly brackets
+	{Statement1:
+	Statement2:}
+	
+Q17. Is let or const hoisting possible in javascript?
+
+	Ans-> Let and const varibales are hoisted and declared but cannot be initialized at the time of hoisting.
+	
+Q18. Is function hoisting possile in Javascript?
+
+	Ans-> Yes function hoisting is possilbe in javascript.
+	
+Q19. Is it possible to declare a variable constant with same name as function?
+
+	Ans-> No, it is not possible. It will throw an Syntax error that identifier has been alread declared.
+	
+Q20. Is it possible to reassign the value of const objects or arrays?
+
+	Ans-> Yes it is possible to change the values of const object and arrays.
+	
+	const obj={role:'developer'}
+	obj.role='senior'
+	console.log(obj)
+	const arr=[1,2,3]
+	arr.push(12)
+	console.log(arr)
+	const x=13;
+ 	x=14;
+	console.log(x)
+	
+Q21. List the seven primitive data types.
+
+	Ans-> The seven primitive datatypes in JavaScript are:
+	a.Boolean- true and false
+	b.null	(since javascript is case sensitive, null is not same as NULL or Null)
+	c.undefined- a top level property whose value is not defined.
+	d.Number- an integer or a floating point variable.
+	e.String- it is a sequence of characters.
+	f.Symbol-a datatype whose instances are unique and immutable
+
+Q22. Define methods through which we can convert string into numbers.
+
+	Ans-> There are two methods:
+	a.ParseInt()- returns only whole number so it is used for conversion of Intergers(console.log(parseInt('101')+3))
+	b.ParseFloat()- returns a floating point value if the string is floating point value(console.log(parseFloat('101.1122')+3))
+	
+	
+Q23. What are literals in JavaScript?
+
+	Ans->Literals represent values in Javascript. these are values not variables in javascript.There are 6 types of literals:
+	a.array literals-[]
+	b.Object literals-{}
+	c.Boolean literalsss
+	d.Numeric literals
+	e.RegEx literals
+	f.String literals
+
+Q24.What is the length of the array arr=[1,,2,,3,]?
+
+	Ans-> arr=[1,2,,3,,]
+	arr1=[,,,]
+	console.log(arr.length,arr1.length)//arr-5,arr1-3
+	The empty spaces between two commas is counted as an element in an array. therefore the length of the arr is 5 and arr1 is 3.
+
+Q25. What will be the output of the above code?
+
+	Ans-> console.log(typeof(Boolean))//this will return type function as Boolean is function
+	console.log(typeof true)//This will return type boolean
+	console.log(typeof false)//This will return type boolean
+	
+Q26. What will be the output of the given code?
+
+	Ans->x=['javascript','java']
+	x.length=1;
+	console.log(x[0])
+	
+
+Q27. How can you access value of objects where keys are numbers?
+	Ans-> const car = { 7: { a: 'Saab', b: 'Jeep' }, 2: 'Mazda',4:'Hyundai',3:'Honda',6:'Ferrari',5:'budgatti' };
+
+		// console.log(car.manyCars.b); 
+		console.log(car[7]);
+		console.log(car[2])// by passing the number in array we can access the value of a particular key in object.
+		
+Q28. What is escape sequence in Javascript?
+
+	Ans-> When we have to pass the string inside a string we use escape sequence. Th example of escape sequence is shown below:
+		console.log("this is an \"example of\" escape sequnce")//DOUBLE QUOTES
+		console.log("this is an \'example of\' escape sequnce")/SINGLE QUOTES
+		console.log("this is an \'example of\' escape sequnce")
+		x="gautam"
+		y=`My name is \"${x}\" escape sequnce`
+		console.log(y)
+		x="gautam"
+		y=`My name is \'${x}\' escape sequnce`
+		console.log(y)
+Q29. What is a block statement?
+
+	Ans->The most basic statement is block statement, which is used to group statements.The block is delimited by a pair of curly 			brackets.
+		{// statement 1
+		//statement 2
+		//statement 3}
+		The above lines are the example of block statement in javascript.
+		Block statements are usually used with control flow statements.
+		while (x < 10) {
+  			x++;
+				}
+		In the code shown above the line x++ is a block statement.
+		
+
+Q30. What are conditional statements?
+
+	Ans->Conditional statements are the set of commands that executes if a specified condition is true.
+	if(condition){
+	statement 1
+	}
+	
+	else{statement 2}
+
+Q31. What are falsy values?
+
+	Ans->A falsy value is a value that is considered false when encountered in a Boolean context.
+		Below is the list of all the falsy values:
+		a.undefined
+		b.null
+		c.false
+		d.NaN
+		e.0
+		f. "" empty string
+		
+Q32. What is switch statement?
+
+	Ans-> A switch statement allows a program to evaluate an expression and attempt to match the expression with the cases. If match 			is found then the case is executed.
+Q33 Why is break used?
+	Ans-> Break is used to ensure that when the condition is met then the program comes out of the conditional statement.
+	
+Q34.Which is the fastest loop in Javascript?
+
+	Ans-> Ther execution time is lowes in for(reverse) loop
+
+Q35. What is exceptional handling in Javascript?
+
+	Ans-> Exceptional handling in Javascript is done by:
+	      1.Using try-catch statements
+	      2.Using throw 
+	      Below is the program showing the concept of try catch and finally and throw used in a javascript program.
+	      //program showing the concept of try catch ad finally execut
+		try {
+ 		   x='gautam';
+    		// console.log(typeof x)
+     		   if(typeof x=='string'){
+        		    throw 'Not a number'
+        		}
+        		else{
+        		    console.log('npm run dev');
+     		   }
+				} catch (error) {
+    		console.log(error,'and this is catch block')
+				}
+			finally{
+	    	console.log('this is finally block that will execute',x)
+		}
+		The try catch statements can be nested.
+		If a try block doesn't have a catch block then it must have a finally 						        	block.	
+		
+								
+Q36. What are the statements for loops provided in Javascript?
+	Ans->
+	a.for statement- excutes until the condition provided becomes false.
+	b.do while statement-this loop executes atleast once and then executes until the condition is true
+	c.while statement-- this loop executes until the condition is true.
+	d.label statement-label statement provides an identifier that lets you refer to it elsewhere in the program
+	NOTE:label is not a keyword in javascript and can be used by any name in javascript.
+	e.break statement- it is used to terminate the loop
+	f.continue statement- it can be used to continue a loop after a break
+	g.for in statement- iterates a specified variable over all the enumerable properties of an object.
+	h.for of statement-creates a loop iterating over iterable objects, invoking a custom iteration hook with statements to b executed 	for each value of the distinct property.
+
+Q37. If we pass a parameter to a function,does it affects the value of a parameter inside the function globally?
+
+	Ans-> Parameters are essentially passed to functions by value — so if the code within the body of a function assigns a completely 		new value to a parameter that was passed to the function, the change is not reflected globally or in the code which 		called that function.
+		Example:
+		function myFunc(obj) {
+ 		 obj.make = 'Toyota';
+			}
+
+		const mycar = {
+ 		 make: 'Honda',
+ 		 model: 'Accord',
+ 		 year: 1998,
+			};
+
+		// x gets the value "Honda"
+		const x = mycar.make;
+		console.log(x)
+		// the make property is changed by the function
+		myFunc(mycar);
+		// y gets the value "Toyota"
+		const y = mycar.make;
+		console.log(y)
+
+Q38.Can we create functions without name in Javascript?
+
+	Ans-> Yes we can create function with function expressions without naming the function.Such functions are called anonymous 	      functions in JS.
+		Example:
+		const square=function(number){
+   		 return number*number
+			}
+		console.log(square(4))
+NOTE: Name can be provided to the function using function expression, so that function can refer to itself.
+		const factorial = function fac(n) {
+ 		return n < 2 ? 1 : n * fac(n - 1);
+			}
+
+		console.log(factorial(4))
+		Function expressions are convinient when passing a function to other function as an Parameter.
+
+Q39.What is the difference between argument and parameter in a function?
+
+	Ans->Function parameters are the names listed in the function's definition. Function arguments are the real values passed to the 		     function. Parameters are initialized to the values of the arguments supplied.
+	     A parameter is a named variable passed into a function. Parameter variables are used to import arguments into functions.
+	     Function parameters are the names listed in the function's definition.
+	     Function arguments are the real values passed to the function.
+	     Parameters are initialized to the values of the arguments supplied.
+	     Two kinds of parameters:
+
+	     a.input parameters
+	     the most common kind; they pass values into functions. Depending on the programming language, input parameters can be passed 	    in several ways (e.g., call-by-value, call-by-address, call-by-reference).
+
+	     b.output/return parameters
+	     primarily return multiple values from a function, but are not recommended since they cause confusion
+
+Q40. What is a method in Javascript?
+
+	Ans-> A method is a function that is the property of an object.
+
+Q41.What is recursion?
+
+	Ans->A function can refer to and call itself. There are three ways for a function to refer to itself:
+		a.function's name
+		b.argument callee
+		c.An inscope variable that refers to the function
+		A function that calls itself is called recursive function. In a way recursion is analogus to loops.Both execute the loop 
+		multiple times and both requrie a condition..If a recursion never reaches a base case, it will go on making recursive 			calls forever and the program will never terminate. This is known as infinite recursion, and it is generally not 			considered a good idea.
+
+Q42. Can we create closures inside a function created using function expression?
+
+	Ans-> Yes. It is possible to create closures in function created using function expression.This can be shown by the example shown 		      below.
+		var abc=function(){return 'this is inner function'};
+		var ab=function (){
+		return abc()
+		}
+		console.log(ab())
+
+Q43. What is closure?
+
+	Ans->A closure is an expression (most commonly, a function) that can have free variables together with an environment that binds 		     those variables (that "closes" the expression).The outer function does not have access to the variables and functions 	     defined inside the inner function. This provides a sort of encapsulation for the variables of the inner function.
+	
+Q44. What is name conflict and scope chain?
+
+	Ans->When two variables in scope of a closure have same name, then the innermost scope takes the highest precedence and the 	     outermost the lowest. This is called scope chain.The first on the chain is the innermost and the last on the chain is the 		    outermost.
+	
+Q45.How are the arguments of a function are stored?
+
+	Ans-> The arguments of a function are stored in array like object.
+
+Q46. What are function parameters in Javascript?
+
+	Ans->There are two kind of special parameters:
+		a.Default parameters- by default the value of parameter is undefined, but it can be set
+		example:
+		function ab(a=13,b=14){
+   		console.log(a+b)}
+   		ab()
+   		//now when we pass the parameters
+   		function ab(a=13,b=14){
+   		 console.log(a+b)}
+   		 ab(19,17)
+		b.Rest Parameters- The rest parameters syntax allow us to represent an indefinite number of arguments as an array.The 			example shown below represents rest parameters in the syntax:
+		function multiply(multiplier, ...theArgs) {
+ 		return theArgs.map((x) => multiplier * x);
+			}
+
+		const arr = multiply(2, 1, 2,6,7,7,8,87,7,6);
+		console.log(arr); // [2, 4, 6]
+
+Q47. What is the significant difference between function expression and arrow function?
+
+	Ans-> There are two significant difference between function expression and arrow function.
+		a.Arrow functions are anonymous functions.
+		b.Arrow functions do not have arguments,this,super, new.target unlike function expressions.
+
+Q48. What are Javascript Inbuilt functions?
+
+	Ans->There are certain Javascript inbuilt function that are used frequently.These functions are listed below:
+		a.ParseInt() : This function is used to convert a string into an integer number.
+		b. ParseFloat() : This function is used to convert a string to a floating point variable number
+		c. encodeURI() : This function encodes a URI by replacing each instance of certain characters
+		d. decodeURI() : This function decodes a Uniform Resource Identifier (URI) previously created by encodeURI()
+
+Q49. What are unary, binary and infix binary operators?
+
+	Ans->x++ or x--// these two are unary operators
+	     x=3+4//infix binary operators
+	     x=operand1 operator operand2
+	This form is called an infix binary operator, because the operator is placed between two operands. All binary operators in  	JavaScript are infix.
+
+Q50. What is conditional/ternary operator?
+
+	Ans-> Ternary operator syntax in Javascript is :
+	const var_name= condition?true:false
+	Ternary or conditional operators can be used to resolve a small expression rather than using if else block.
+
+Q51. Why type of undefined is undefined?
+
+	Ans->A variable that has not been assigned a value is of type undefined . A method or statement also returns undefined if the 	 	     variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.
+
+Q53. Why type of null is an object?
+
+	Ans->The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values and is 	        treated as falsy for boolean operations.
+
+Q54. What are Regular expressions?
+	Ans->Regular Expressions are patterns used to match characters combination in a string.In javascript, regular expressions are also objects.
+	
+Q55. List some of the methods use in regular expressions.
+
+	Ans-> Some of the methods use in regular expressions are as follows:
+		a.exec() - returns an array if match is found else it will return null
+		b.new RegExp() - this methods convert any string into regular expression
+		c.source- .source is used to read the text inside the regular expression.
+		d.test()- this function wll return boolean value true if the expression is present in the strinng otherwise it wil return 					false.
+NOTE: The functions shown below are applied on string instead of regular expression varibale.
+		e.match()- this returns and array if match is found else it will return null
+		f. search()- this returns a value of index if the match is found else it will return -1 value
+		g. replace()- this function return the partiular portion of the string with the regular expression.
+		
+Q56. What is an array?
+
+	Ans-> Array is an ordered list of values that you refer with index or names.
+NOTE: JavaScript does not explicity has array as a datatype. Javascript has Array Objects.
+
+Q57. What is an array initializer?
+
+	Ans->Array literals are also called array initializers.
+	
+Q58. What happens if we create an array object using const arr1 = new Array(23); ?
+2
+	 Ans->This will create an empty array object of size 23.Here the parameter passed 23 represents the size of the array.This line is 			same as
+	 	const arr = [];
+		arr.length = 23;
+		console.log(arr);// the output of this line will be it will create 23 empty items in the aray object.
+NOTE: const arr3 = [];
+arr3.length = 2.3;
+console.log(arr3)
+The above line will return a range error as array length cannot be a floating point variable.
+	
+Q59.what will be the output of given statement?
+
+	Ans->const a= Array.of(9.3)
+			console.log(a)// This is static method used to create array with only one element.
+
+Q60.What will be output of the above code?
+
+	const arr = ['one', 'two', 'three',4,5, 6,7 ];
+
+	console.log(arr['toString'] )
+
+	console.log(arr['length'] )
+	
+	Ans->const arr = ['one', 'two', 'three',4,5, 6,7 ];
+
+		console.log(arr['toString'] )//The output of this line will be a [function:toString]
+
+		console.log(arr['length'] )// The output of this line will give the length of the array.
+
+Q61. How to populate an array?
+	Ans-> The statements shown below is a mehod by which we can populate array-
+		 arr=[]
+		arr[0]=0
+		arr[1]=1
+		arr[2]=2
+		console.log(arr)//[0,1,2]
+
+Q62. What will be the output of the following code?
+
+	Ans-> arr=[]
+		arr[3.4]='oranges';
+		console.log(arr)//the output of this line will be [3.4:'oranges']
+		
+Q63. What will be the output of the following code?
+
+	Ans->
+	const cats = [];
+	cats[30] = ['Dusty'];
+	console.log(cats,cats.length); // [<30empty items>,['Dusty']], 31
+	
+Q64. Consider the following code of an array where explicitly the length of array is set.
+
+ 	Ans-> 
+ 	
+ 	const cats = ['Dusty', 'Misty', 'Twiggy'];
+	console.log(cats.length); //length of the array is 3
+	cats.length = 2;//length of the array is explicitly set to 2
+	console.log(cats)// will console the forst two elements of the array
+	cats.length = 0;//length of the array is explicitly set ot 0
+	console.log(cats);//length will be 0
+	cats.length = 3;// length set to 3
+	cats[3]='elements';// 3 empty items and added one more element
+	console.log(cats.length,cats)// length-4,cats-[<3 empty items>,'elements']
+
+Q.65 What will be the output of the following code?
+
+	Ans->
+	const cats=[];
+	cats[30] = ['Dusty'];
+	console.log(cats['length']); // the output of the given line will be length og the cats array that i.e 31
+	
+Q.66 How can we perform iterations over an array?
+
+	Ans->
+	const colors = ['red', 'green', 'blue'];
+	colors.forEach((r) => console.log(r));
+		// red
+		// green
+		// blue
+	for(x of colors){
+    console.log(x)
+	}//The output of this loop will be red,green and blue
+	
+NOTE:We can use a function to iterate over an array.
+
+Q67. What will be the output of the given code?
+
+	Ans->const sparseArray = ['first', 'second', , 'fourth'];
+
+	sparseArray.forEach((element) => {
+ 	 console.log(element);
+		});
+	The ouput of the given lines will be first
+						second
+						fourth
+	const nonsparseArray = ['first', 'second', undefined, 'fourth'];
+
+		nonsparseArray.forEach((element) => {
+ 		 console.log(element);
+		});
+		The ouput of the given lines will be first
+						second
+						undefined
+						fourth
+						
+NOTE: Unassigned values are not iterated in a forEach loop.
+
+Q68. What are Sparse arrays?
+ 	
+ 	Ans->Arrays can contain "empty slots", which are not the same as slots filled with the value undefined. Emplty slots are created 
+ 	by following ways:
+ 	a. const a= Array(5)
+ 	b.const  b = [1,2,,3,4,,5,,,,]
+ 	c.const c = [1, 2];
+		c[4] = 5
+	d.const d = [1, 2];
+		d.length = 5
+	e.const e = [1, 2, 3, 4, 5];
+		delete e[2];
+NOTE: In some cases the empty items act as if they are filled with undefined.
+		arr=[1,2,,,,4,5,6,,8]
+		for (x of arr){
+    		console.log(x)
+				}
+
+
+Q69.Can array be used as an object to store key value pairs or properties?
+	Ans-> Yes.Arrays can be used as an object to store key value pairs. This can be explained in the example below:
+		const a=[1,2,,,4]
+		a.prop1='imp';
+		console.log(a)// The output of this line will be [ 1, 2, <2 empty items>, 4, prop1: 'imp' ]
+NOTE:const a=['one',2,,,4]
+		a.prop1='imp';
+		console.log(a)
+		console.log(a.one)
+		// Object.freeze(a)
+		a.push(32)
+`		console.log(a)
+IF WE PUSH ANY OBJECT IN AN ARRAY CONTAINING  PROPERTY THEN THE ELEMENT WILL BE ADDED TO THE SECOND LAST POSITION OF THE ARRAY.
+		
+Q70. What are Typed Arrays in Javascript?
+	
+	Ans-> JavaScript typed arrays are array-like objects that provide a mechanism for reading and writing raw binary data in memory 			buffers.Array objects grow and shrink dynamically and can have any JavaScript value. JavaScript engines perform 			optimizations so that these arrays are fast. JavaScript engines perform optimizations so that these arrays are fast. 			However, as web applications become more and more powerful, adding features such as audio and video manipulation, access 			to raw data using WebSockets, and so forth, it has become clear that there are times when it would be helpful for 			JavaScript code to be able to quickly and easily manipulate raw binary data in typed arrays.Typed array objects share 			many of the same methods as arrays with similar semantics. However, they are conceptually not arrays and don't have all 			array methods.
+Q71. What will be the output of the given array?
+
+		arr[6]='default'
+		arr.prop1='default1'
+		console.log(arr)
+		arr.push(7)
+		console.log(arr)// from output of this line we can infer that the value inserted won't come ahead of key:value pair i.e 			property, instead the value jumps and appears as second last element in the array
+		arr.pop()
+		console.log(arr)//we can make the inference from the output of this line that pop and push methods work only on values in 			array and not on key:value pairs i.e. properties
+
+Q72. What is a Map and what are the advantages of map over objects?
+
+	Ans-> A Map object is a simple key/value map and can iterate its elements in insertion order.Objects have been used to map 		strings to values. Objects allow you to set keys to values, retrieve those values, delete keys, and detect whether 		something is stored at a key. Map objects, however, have a few more advantages that make them better maps. Some of them 			are as follows:
+		a.he keys of an Object are Strings or Symbols, where they can be of any value for a Map.// we can set numbers as keys in 			  maps.
+		b.You can get the size of a Map easily, while you have to manually keep track of size for an Object.
+		c.The iteration of maps is in insertion order of the elements.
+		
+Q. 73 What are the uses of Maps?
+
+	Ans->a. Use maps if there is a need to store primitive values as keys because object treats each key as a string whether it's a 			number value, boolean value or any other primitive value.
+	     b.Use objects when there is logic that operates on individual elements.
+	     c.Use maps over objects when keys are unknown until run time, and when all keys are the same type and all values are the 			same type.
+	     
+NOTE: MAPS always return a new array.
+Q74  What are Weakmaps?
+
+	Ans->A WeakMap is a collection of key/value pairs whose keys must be objects, with values of any arbitrary JavaScript type, and 			which does not create strong references to its keys. That is, an object's presence as a key in a WeakMap does not prevent 			the object from being garbage collected. Once an object used as a key has been collected, its corresponding values in any 			WeakMap become candidates for garbage collection.Below is the example of weakmap.
+		
+		let carWeakMap= new WeakMap()
+		let key1= {id:1}
+		let car1 ={make:'Honda',model:'Civic'}
+		carWeakMap.set(key1,car1)
+		console.log(carWeakMap)
+		
+Q75. What is a set? What are the advantages of set over arrays?
+
+ 	 Ans->Set objects are collections of values. You can iterate its elements in insertion order. A value in a Set may only occur 			once; it is unique in the Set's collection.The sets have advantage over arrays.Some of them are:
+ 	 
+ 	 	a.Deleting Array elements by value (arr.splice(arr.indexOf(val), 1)) is very slow.Set objects let you delete elements by 			  their value. 
+ 	 	b.The value NaN cannot be found with indexOf in an array.
+ 	 	c.Set objects store unique values so you don't have to manually keep track of duplicates.
+ 	 	
+ 	 	
+Q76. What is a Weakset?
+
+	Ans-> Weakset is a collection of unique objects.Weaksets are not enumerable so we cannot iterate over a weakset.The use cases of WeakSet objects are limited. They 			will not leak memory, so it can be safe to use DOM elements as a key and mark them for tracking purposes, for example.
+
+
+ Q77. How do you define objects in JavaScript?
+ 
+ 	Ans-> An object is collection of properties and a property is th association between the key value pairs.A property's value can 			be  a function, in which property is known as method.
+ 	
+ Q78. Why JavaScript objects are called associative arrays?
+ 
+ 	Ans->Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to 			access it.An object property name can be any valid JavaScript string, or anything that can be converted to a string, 			including an empty string. However, any property name that is not a valid JavaScript identifier cannot use dot notation.
+ 		JavaScript object property names (keys) can only be strings or Symbols — all keys in the square bracket notation are 			converted to strings unless they are Symbols.
+ 		obj={7:{4:4,3:2,1:2}}
+		c=obj[7][4]
+		console.log(c)//this will output value 4
+		
+Q79. How many ways we can traverse/list object properties?
+
+	Ans-> There are three ways in which we can list object properties and these are:
+		a.for in loops-
+		b.Object.keys(obj)- This returns only enumerable string property name in the object
+		c.Object.getOwnPropertNames(obj)- This method returns an array containing all the own string property names in obj, 		  regardless of if they are enumerable or not.obj={role1:1,role2:2,role3:3,role4:4},
+		  console.log// this property returns an array of properties irrespective of wether they are enumerable or not
+
+Q80.What are getter and setter methods in objects?Explain with Example.
+
+	Ans->A getter is a method that gets the value of a specific property. A setter is a method that sets the value of a specific 			property. You can define getters and setters on any predefined core object or user-defined object that supports the 		addition of new properties. Below is the example of getter and setter function inside object:
+	
+		const obj = {a: 7,get b() {return this.a + 1;},
+		set c(x) {this.a =x / 2;}
+			};
+
+			console.log(obj.a); // 7
+			console.log(obj.b); // 8, returned from the get b() method
+			obj.c = 50;         // Calls the set c(x) method
+			console.log(obj.a); // this will overwrite the value of a and return 25
+			console.log(obj.b)// this will give the value of b as 26
+			
+Q81. What will be the output of the given code?
+
+	Ans-> const fruit={name:"apple"}
+	const fruitname={name:"apple"}
+	console.log(fruit===fruitname)//this will return false as two distinct object with same properties are not same
+	
+NOTE:   // Two variables, a single object
+	const fruit = {name: 'apple'};
+	const fruitbear = fruit;  // Assign fruit object reference to fruitbear
+
+	// Here fruit and fruitbear are pointing to same object
+	fruit == fruitbear; // return true
+	fruit === fruitbear; // return true
+	When one variable is create from another then the value of both the variables where object have same properties.
+
+
+Q82. What are classes in Javascript?
+
+	Ans->Classes are the blueprint of instances or from which instances can be made. For example- 
+	const a= new Date()/ date is an inbuilt class and a is the instance of class Date
+	console.log(a.toLocaleDateString())
+	From the example shown above we can infer that:
+	
+	a.Classes create objects through the new operator.
+	b.Each object has some properties (data or method) added by the class.
+	c.The class stores some properties (data or method) itself, which are usually used to interact with instances.
+	These correspond to the three key features of classes:
+
+	a.Constructor;
+	b.Instance methods and instance fields;
+	c.Static methods and static fields.
+
+Q83. Can we create class by using expressions?
+
+ 	Ans->Yes. class can be created using class expressions.
+ 		For example:
+		const MyClass = class {
+  		// Class body...
+		};
+		
+ 	

@@ -57,3 +57,23 @@ let str="this a sample string and this THis ThIS also ."
 reg=/this/g
 result= str.match(reg)//this function  will return an array if the expression in present otherwise it will return null
 console.log(result)
+
+
+
+
+//_________________________________________________________________
+let str=" a sample string and this THis ThIS also ."
+reg=/thisssss/g
+let result= str.search(reg)//this function will return the value of index of regular epression if found and -1 if not found
+console.log(result)
+
+
+//________________________________________________________________
+
+let str="this a sample string and this THis ThIS also ."
+reg=/this/g
+result=str.replace(reg,'Sam')//returns new replaced string with all the replacements
+console.log(result)//if no global flag is provided with regular expression then only the first expression found will be replaced, but if the global flag is provided then all the values will be replaces by the text provided after regular expression.
+
+
+

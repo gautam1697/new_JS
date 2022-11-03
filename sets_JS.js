@@ -32,7 +32,7 @@ b=new Set(Object.keys(obj));
 // console.log(b);
 // console.log(b.entries())
 console.log(a.has('empty'))
-/______________________________________________________________________
+//______________________________________________________________________
 //4.set.values()
 //returns all the values present in the iterator
 //
@@ -44,4 +44,33 @@ b=new Set(arr)
 console.log(b);
 b.delete(55)
 console.log(b)
-//
+//______________________________________________________________________________
+
+const mySet = new Set();
+mySet.add(1);
+mySet.add(1);//this line will not add 1 to the set as set does not allow duplicate values
+mySet.add(12);
+mySet.add('some text');
+mySet.add('foo');
+console.log(mySet)
+
+mySet.has(1); // true
+mySet.delete('foo');//this will delete the value 'foo' from the set
+mySet.size; // 2
+
+for (const item of mySet) {
+  console.log(item);
+}// this will return 1, 12, 'some text
+console.log(mySet)//{ 1,12,'sometext'}
+
+//_____________________________________________________________________________________________
+const mySet = new Set();
+mySet.add(1);
+mySet.add(12);
+mySet.add('some text');
+mySet.add('foo');
+console.log(mySet)
+a=[...mySet]// this is the spread operator through which we can creaet an array using set
+console.log(a)
+b=Array.from(mySet)// this is another way by which we can create an array using set 
+console.log(b)
