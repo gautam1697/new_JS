@@ -3,6 +3,7 @@ Q1. What is Javascript?
 	 JavaScript is mostly used in developement of :
 	 a. client side logic(reactjs, nextjs, angularjs)
 	 b. server side logic(Nodejs,Expressjs,Netjs)
+	 
 NOTE: Javascript resembles to Java in naming conventions and in expression, that is why it was named from LiveScript to Javascript.
 
 Q2.State difference between Interpreted and compiled language.
@@ -20,6 +21,7 @@ Q2.State difference between Interpreted and compiled language.
 	c.can be changed dureing execution
 			
 Q3.What is the difference between programming language and scripting language?
+
 	Ans-> Programming language :
 	a.is a type of computer language that consists of set of instructions for communicating with computers.
 	b.most of them are compiled
@@ -71,6 +73,7 @@ Q8. Why is JS called a lightweighted language?
 	c.it requires less memory to implement and does not put excess strain on your RAM.
 	
 Javascript is implementation of ECMAScript and follows rules and guidelines to be an ECMA compliant.
+
 NOTE:- It is found that Node JS performs computations faster and uses less memory and resources. C++ was found to be faster and requires less memory but has high CPU usage as compared to Node JS.
 
 
@@ -80,6 +83,7 @@ Q9. What are statements in JavaScript?
 	
 	
 Q10.What is the difference between let,var and const?
+
 	Ans-> 
 	a.var-declares a varibale(globally-scoped or function-scoped),optionally initializing its value.
 	
@@ -153,6 +157,7 @@ Q15. What is a lexical environment and lexical scoping?
 	Lexical in general means in hierarchy or in a sequence.Whenever a new execution context(EC) is created a new lexical 		environment  is created and it is referenced in local EC in memory space.
 	
 	Lexical scoping, also known as static scoping, is a convention used with many modern programming languages. It refers to setting 		the scope, or range of functionality, of a variable so that it may be called (referenced) from within the block of code in which 		it is defined.
+	
 Q16. What is a block statement?
 
 	Ans->The most basic statement is a block statement, which is used to group statements. The block is delimited by a pair of curly brackets
@@ -251,6 +256,7 @@ Q28. What is escape sequence in Javascript?
 		x="gautam"
 		y=`My name is \'${x}\' escape sequnce`
 		console.log(y)
+		
 Q29. What is a block statement?
 
 	Ans->The most basic statement is block statement, which is used to group statements.The block is delimited by a pair of curly 			brackets.
@@ -322,6 +328,7 @@ Q35. What is exceptional handling in Javascript?
 		
 								
 Q36. What are the statements for loops provided in Javascript?
+
 	Ans->
 	a.for statement- excutes until the condition provided becomes false.
 	b.do while statement-this loop executes atleast once and then executes until the condition is true
@@ -494,6 +501,7 @@ NOTE: The functions shown below are applied on string instead of regular express
 Q56. What is an array?
 
 	Ans-> Array is an ordered list of values that you refer with index or names.
+	
 NOTE: JavaScript does not explicity has array as a datatype. Javascript has Array Objects.
 
 Q57. What is an array initializer?
@@ -506,9 +514,10 @@ Q58. What happens if we create an array object using const arr1 = new Array(23);
 	 	const arr = [];
 		arr.length = 23;
 		console.log(arr);// the output of this line will be it will create 23 empty items in the aray object.
-NOTE: const arr3 = [];
-arr3.length = 2.3;
-console.log(arr3)
+NOTE: 		const arr3 = [];
+		arr3.length = 2.3;
+		console.log(arr3)
+
 The above line will return a range error as array length cannot be a floating point variable.
 	
 Q59.what will be the output of given statement?
@@ -554,7 +563,6 @@ Q63. What will be the output of the following code?
 Q64. Consider the following code of an array where explicitly the length of array is set.
 
  	Ans-> 
- 	
  	const cats = ['Dusty', 'Misty', 'Twiggy'];
 	console.log(cats.length); //length of the array is 3
 	cats.length = 2;//length of the array is explicitly set to 2
@@ -626,7 +634,6 @@ NOTE: In some cases the empty items act as if they are filled with undefined.
     		console.log(x)
 				}
 
-
 Q69.Can array be used as an object to store key value pairs or properties?
 	Ans-> Yes.Arrays can be used as an object to store key value pairs. This can be explained in the example below:
 		const a=[1,2,,,4]
@@ -686,7 +693,6 @@ Q75. What is a set? What are the advantages of set over arrays?
  	 	b.The value NaN cannot be found with indexOf in an array.
  	 	c.Set objects store unique values so you don't have to manually keep track of duplicates.
  	 	
- 	 	
 Q76. What is a Weakset?
 
 	Ans-> Weakset is a collection of unique objects.Weaksets are not enumerable so we cannot iterate over a weakset.The use cases of WeakSet objects are limited. They 			will not leak memory, so it can be safe to use DOM elements as a key and mark them for tracking purposes, for example.
@@ -741,10 +747,9 @@ NOTE:   // Two variables, a single object
 	fruit === fruitbear; // return true
 	When one variable is create from another then the value of both the variables where object have same properties.
 
-
 Q82. What are classes in Javascript?
 
-	Ans->Classes are the blueprint of instances or from which instances can be made. For example- 
+	Ans->Classes are the templates for creating instances. For example- 
 	const a= new Date()/ date is an inbuilt class and a is the instance of class Date
 	console.log(a.toLocaleDateString())
 	From the example shown above we can infer that:
@@ -760,10 +765,197 @@ Q82. What are classes in Javascript?
 
 Q83. Can we create class by using expressions?
 
- 	Ans->Yes. class can be created using class expressions.
+ 	Ans->Yes,class can be created using class expressions..Class expressions can have names as well. The expression's name is only 			visible to the class's body.
+ 	
  		For example:
 		const MyClass = class {
-  		// Class body...
 		};
-		
+
+Q84.Does class support hoisting?
+	
+	Ans-> Unlike function declarations, class declarations are not hoisted (or, in some interpretations, hoisted but with the 			temporal dead zone restriction), which means you cannot use a class before it is declared.This behaviour is similar to as 			that of let and const hoisting.
+	
+Q85.Can we call a clas without using new keyword?
+
+	Ans-> No we cannot call a class without using new keyword. It will result in an error, that class cannot  be invoked without a 			new keyword.
+	
+Q86. What are constructors in class?
+
+	Ans->A constructor is a special function that creates and initializes an instance of a class. In JavaScript, a constructor 		gets called when an object is created using the new keyword. The purpose of a constructor is to create a new object and 			set values for any existing object properties.The most important job of the constructor is to act as a factory for the 			instance of that class.In the classes the instance creation is done by the constructor of that class.
+	
+Q87. When we create two different class instances with same values with new keyword,does that mena that the values of the instances is same?
+ 
+ 	Ans-> No. Whenever we create a different instances from same classes using new keyword even when their properties are same that 		      does not meanthat the intances are equal.This behaviour is same as when we create an object from new keyword. This can be 		      shown in the example below:
+ 		class Color{
+   		 constructor(...values){
+       	 this.values=values
+   			 	}
+				}
+		const obj= new Color(1,2,2,34,4)
+		console.log(obj)
+		const obj1= new Color(1,2,2,34,4)
+		console.log(obj1)
+		console.log(obj===obj1)// this line will give the output false
+
+Q88. Can we return something from the constructor function of a class?
+
+ 	Ans-> Yes. It is possible for the constructor function to return a value. But it is advised not to return anything from the 		constructor because if we return anything(non-primitive values) from the constructor function then the  returned value 			will overrride the value passed in instance object of the class and will change the expression. This can be shown with 			the example below:
  	
+ 		class Myclass{
+    		constructor(value){
+      		this.value=value
+        	return [];//if we try to return anything from the constuctor of a class then the returned value will become the 					expression of the class overriding the value of the instance object.So it is advised not to return 					something from the constuctor function.
+   				 }
+				}
+		const obj= new Myclass(3)
+		console.log(obj)
+ 
+ Q89. Why do we not define a function inside a constructor of a clas, even when it is used repeatedly by instances of the class?
+ 
+ 	Ans-> We do not create a function inside constrcutor because even it works, but it creates a new function everytime an instance 			is created, even when they do all the same thing. This is memory consuming and is generally not preferred.In contrast, if 			you use a method, it will be shared between all instances. A function can be shared between all instances, but still have 			its behavior different when different instances call it, because the value of this is different for all the instances.
+ 
+Q90. What are public instance fields?
+	
+	Ans->Public instance fields exist on every created instance of a class.Public fields are almost equivalent to assigning a 			property to this.
+	
+Q91.What are static properties in class in Javascript?
+
+	Ans->Static properties are a group of class features that are defined on the class itself, rather than on individual instances of 	    the class. These features include:
+
+	     a.Static methods
+	     b.Static fields
+	     c.Static getters and setters
+	     Static initialization blocks are almost equivalent to immediately executing some code after a class has been declared. The 		     only difference is that they have access to static private properties.
+	     
+Q92. What are promises?
+
+	Ans-> A promise is an object representing the eventual completion or failure of an asynchronous operation.A promise is a returned 		object to which you attach a callback, instead of passwing callbacks into a function.A promise comes with some 			guarantees.Some of those are listed below-
+	
+		a.callbacks() added with then will never be invoked before the completion of the current run of the JS event loop.
+		b.These callbacks will be invoked even if they were added after the success or failure of the asynchrounous operation
+		that the promise represents.
+		c.Multiple callbacks may be added by calling then() several times which will be invoked in the order which follow
+		chaining principle.
+		
+		The code below shows an example of how a promise works.
+		There are generally 2 parameters in a promise. Resolve and Reject. If the condition is true then the given statement is 			resolved and if the condition is false then the promise is rejected.
+		
+		var p = new Promise(function(resolve,reject)
+		{
+    		x=14;
+   		 //or if x=='14'
+   		if(typeof x=='number'){
+      		  resolve(x/2)
+   		 }
+    		else{
+       	 reject(x)
+    		}
+		})
+		console.log(p)// result-> Promise{7} //or if x=='14' then the promise will be rejected.
+
+Q93. How do we execute asynchronous operations back to back?
+
+	Ans- > We achieve back to back asynchronous operations by promise chaining.This can be explained with the example shown below:
+		const promise = doSomething();
+		const promise2 = promise.then(successCallback, failureCallback)
+				//or this can be simplified by
+		const promise2 = doSomething().then(successCallback, failureCallback);
+
+Q94. What is a floating promise?What are race conditions?
+
+	Ans-> When we do not return a result of previous promises then there is no wa to track settlement and the promise in this 		      condition is called floating.A race condition is an undesirable situation that occurs when a desired system attempts to 		      perform two or more operation at the same time, but because of the nature of the device or system , the operation must be 		      performed in proper sequence.
+	
+Q95. What are callback functions?
+
+	Ans->A callback function is a function passed into another function as an argument, which is then invoked inside the outer 	     function to complete some kind of routine or action.The code shown below represents the example of  callback functions-
+	
+		function greeting(name) {
+  		alert(`Hello, ${name}`);
+}
+
+		function processUserInput(callback) {
+  		const name = prompt("Please enter your name.");
+  		callback(name);
+		}
+		processUserInput(greeting);
+		
+Q96. What are callback hells?
+
+	Ans->Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback 		depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of 		the code. 
+		
+Q97.Why do we prefer promises over callbacks?
+
+	Ans->Promises solve a fundamental flaw with the callback pyramid of doom, by catching all errors, even thrown exceptions and 		     programming errors. This is essential for functional composition of asynchronous operations.
+
+
+Q98. What happens when a promise is rejected?
+
+	Ans->Whenever a promise is rejected, one of the two events is sent to global scope(generally window).These two events are:
+	
+		a.rejectionhandled- Sent when a promise is rejected,after that rejection has been handled by the executor's reject 		  function.
+		b.unhandledrejection- sent when a promise is rejected but there is no rejection handler available.
+		
+Q99. What is the difference between closures and callbacks?
+
+Ans-> The main difference between closures and callbacks and closure is:
+	a callback is executable code that is passed as an argument to other code.a callback is executable code that is passed as an 		argument to other code.
+	
+	a closure is a function that is evaluated in an environment containing one or more bound variables. When called, the function can 	access these variables.
+
+Q100.What are iterators and generators in Javascript?
+
+	Ans->In Javascript iterator is an object which defines a sequence and potentially a return value upon its termination.nce 		created, an iterator object can be iterated explicitly by repeatedly calling next(). Iterating over an iterator is said to 	consume the iterator, because it is generally only possible to do once. After a terminating value has been yielded additional 		calls to next() should continue to return {done: true}.
+	
+	When called, generator functions do not initially execute their code. Instead, they return a special type of iterator, called a 		Generator.When a value is consumed by calling the generator's next method, the Generator function executes until it encounters 		the yield keyword.
+	
+	
+	
+Q101. What is the difference between yield and return statement in a function in Javascript?
+
+	Ans->Return simply returns the value after the function call, and it will not allow you to do anything else after the return 		     statement. Yield works different. Yield returns a value only once, and the next time you call the same function it will move 	    on to the next yield statement.
+
+Q102.Can generators be constructed?
+
+	Ans-> Generators are not constructable and thus we cannot create a generator function object using new keyword.This can be shown in the example below:
+	
+	function* f() {}
+	const obj = new f; // throws "TypeError: f is not a constructor
+	
+NOTE: Though Generator functions ar not constructable but can be defined in an expression.
+
+Q103.What are iterables?
+
+	Ans->An object is iterable if it defines its iteration behavior, such as what values are looped over in a (for of) construct.In 		     order to be iterable, an object must implement the @@iterator method.Iterables which can iterate only once (such as 		     Generators) customarily return this from their @@iterator method, whereas iterables which can be iterated many times must 		     return a new iterator on each invocation of @@iterator.
+	
+Q104. What is the difference between iterables and iterators?
+
+	Ans-> a.Iterable-Iterable is an object over which one can iterate over.
+	      
+	      b.Iterator- Iterator is an object which  is used to iterate over an iterable object using next() method which returns the 			next item.
+	      The code shown below shows the example of iterator and iterables 
+
+Q105.What is Meta programming in Javascript?
+	
+	Ans->Meta programming is a programming technique in which computer programs have the ability to treat other programs their 	     data. With ES6, we have the support of reflect and proxy objects that allows us to do metaprogramming with ease.
+	     This means program can be designed to read,generate, analyze or transform other programs and even modify it when running.
+	     Reflection is a branch of metaprogramming which has three sub branches that invloves:
+	     
+	     a.Introspection- Code is able to inspect itself. It is used to access the internal properties such that we can get the 		low-level information of our code.
+
+	     b.Self-Modification- the code has the ability to modify itself
+	     
+	     c.Intercession-literal meaning of intercession is acting on behalf of somebody else.In Meta programming intercession does 	   	exactly the same using concepts like wrapping,trapping and intercepting.
+	     
+Q106. What are events in Javascript?
+	
+	Ans->Events are the actions or the occurences that happen in a system you are programming,which the system tells you about,so 		     your code can react to them.There are many different types of events that can occur-
+		a.The user selects, clicks, or hovers the cursor over a certain element.
+		b.The user chooses a key on the keyboard.
+		c.The user resizes or closes the browser window.
+		d.A web page finishes loading.
+		e.A form is submitted.
+		f.A video is played, paused, or ends.
+		g.An error occurs.
+
+Q107.
+

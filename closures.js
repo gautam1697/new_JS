@@ -111,3 +111,17 @@ console.log(output[4]());
 called then it will return an array of function as var a represents an array of
 functions. when we call array with the value of i then it will call the closure
 function with the value passed in it and will return the value of closure function*/
+
+//___________________________________________________________________________________________________
+
+function x(){
+    var a=7;
+    function y(){
+        console.log(a)
+    }
+    a=100;
+    return y;
+}
+
+var z=x();
+z();

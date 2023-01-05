@@ -1,7 +1,5 @@
-//Map Methods
-arr=[1,2,3,445,5,6,6,77,]
-b=arr.map((a)=>{ return a});//this is a way to create a new array by using map method.
-// console.log(b)
+//Map is a keyed collection and this map is differen from the mapo method used in arrays in Javascript
+const sayings = new Map();
 c=new Map();//new way of creating a map
 c.set(1,'one')//adding key value pairs to the map
 c.set(2,'two')
@@ -16,9 +14,6 @@ console.log(c)
 // c.delete(1)//removes the the specified key value pair 
 
 //_____________________________________________________________________________________
-//Map objects in javascript
-
-const sayings = new Map();
 
 sayings.set('dog');
 console.log(sayings)
@@ -42,3 +37,5 @@ console.log(sayings)
 //____________________________________________________________________________________________
  obj={role:1,role1:2,role2:2,role3:3,role4:4,role4:4}
  console.log(Object.values(obj).map((a)=>{return a}))//this gives an output array [1,2,3,4]
+ 
+ //NOTE: map method in javscript is used to create a new array evertime a value is passed in that function.
