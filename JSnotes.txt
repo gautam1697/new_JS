@@ -40,7 +40,6 @@ Q3.What is the difference between programming language and scripting language?
 	f.they require a host
 	g.all scripting languages are programming languages.
 
-Q4. Why is Javascript called JIT just in time compiled language?
 
 
 	Ans->compilation ensures that compiled code is optimized for faster execution and interpreter ensures code execution immediately 		and faster startup.JavaScript Engines are designed to leverage best of both the approaches.
@@ -418,8 +417,7 @@ Q42. Can we create closures inside a function created using function expression?
 
 Q43. What is closure?
 
-	Ans->A closure is an expression (most commonly, a function) that can have free variables together with an environment that binds 		     those variables (that "closes" the expression).The outer function does not have access to the variables and functions 	     defined inside the inner function. This provides a sort of encapsulation for the variables of the inner function.
-	
+	Ans->A closure is a function bundled together with its lexical environment.Closure gives us access to an outer function's scope from inner function.
 Q44. What is name conflict and scope chain?
 
 	Ans->When two variables in scope of a closure have same name, then the innermost scope takes the highest precedence and the 	     outermost the lowest. This is called scope chain.The first on the chain is the innermost and the last on the chain is the 		    outermost.
@@ -773,7 +771,7 @@ Q83. Can we create class by using expressions?
 
 Q84.Does class support hoisting?
 	
-	Ans-> Unlike function declarations, class declarations are not hoisted (or, in some interpretations, hoisted but with the 			temporal dead zone restriction), which means you cannot use a class before it is declared.This behaviour is similar to as 			that of let and const hoisting.
+	Ans-> Much like their function counterparts, JavaScript class declarations are hoisted. However, they remain uninitialised until evaluation. This effectively means that you have to declare a class before you can use it.
 	
 Q85.Can we call a clas without using new keyword?
 
@@ -881,7 +879,7 @@ Q95. What are callback functions?
 		
 Q96. What are callback hells?
 
-	Ans->Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback 		depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of 		the code. 
+	Ans->Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback 		depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of 		the code. Problem arises when we try to execute multiple asynchronous operations which require unpredictable time before the result becomes available.
 		
 Q97.Why do we prefer promises over callbacks?
 
@@ -946,16 +944,36 @@ Q105.What is Meta programming in Javascript?
 	     
 	     c.Intercession-literal meaning of intercession is acting on behalf of somebody else.In Meta programming intercession does 	   	exactly the same using concepts like wrapping,trapping and intercepting.
 	     
-Q106. What are events in Javascript?
-	
-	Ans->Events are the actions or the occurences that happen in a system you are programming,which the system tells you about,so 		     your code can react to them.There are many different types of events that can occur-
-		a.The user selects, clicks, or hovers the cursor over a certain element.
-		b.The user chooses a key on the keyboard.
-		c.The user resizes or closes the browser window.
-		d.A web page finishes loading.
-		e.A form is submitted.
-		f.A video is played, paused, or ends.
-		g.An error occurs.
 
-Q107.
+Q106.What is the difference between value hositing and declaration hoisting?
+
+Ans->
+
+Value hoisting- Being able to use value of a variable's value in its scope before the line it is declared.
+function, function* async function, async* function are hoisted with this behaviour
+
+Declaration hoisting-Being able to reference a variable in its scope before the line it is declared, without throwing reference error.
+var declaration is hoisted with this behaviour.
+
+Lexical declaration-The declaration of variable causes change in its scope before the line it is declared.
+let, const and class declarations are hoisted using this behaviour.
+
+
+Q107.Is const variable immutable?
+
+Ans->No. const variable is not immutable.It just means that the identifier cannot be reassigned with the another value.
+
+Q108.Why Lexical declaration cannot appear in a single statement?
+
+Ans->Lexical declarations, such as let and const, cannot appear in a single-statement context because they are block-scoped declarations. A block is a set of statements enclosed in curly braces {}. When a lexical declaration is used inside a block, it is only accessible within that block.
+
+If a lexical declaration is used in a single-statement context, it would be outside of any block and would not be block-scoped. This would lead to confusion and potential bugs, as the variable or constant would be accessible throughout the entire scope, rather than just the block in which it was declared.Thus lexical declration cannot appear in a single statement.
+
+Q109.What is the difference between a method and a function?
+
+Ans->A function is a block of reusable code that performs a specific task. It is a standalone block of code that can take inputs, perform operations on those inputs, and return outputs. Functions can be defined anywhere in your JavaScript code, and can be called from any other part of the code, even from within other functions.
+
+A method, on the other hand, is a function that is associated with an object. It is a property of an object, and can only be called on that specific object. Methods can access the data and other properties of the object on which they are called. When you call a method, you use the dot notation to specify the object.
+
+
 

@@ -48,7 +48,7 @@ git init "directory name"
 
 
 13.git add -A
-//this commands add the new,modified and deleted files to the staging area
+//this commands adds the new,modified and deleted files to the staging area
 
 
 14. git rm (filename)
@@ -163,8 +163,9 @@ git reset --hard {commit id}
 45.git branch -d
 //this command will delete the current branch 
 
-46. git merge
-// this command merges the current branch into master
+46. git merge <commit id>
+//this command is used to merge current branch with the branch with the commit id provided
+
 //NOTE: user should be cautios before running this command.
 
 47. git rebase
@@ -200,4 +201,86 @@ git reset --hard {commit id}
 54. git clone -b <Branch name><Repository URL>  
 //this commadn will let to take a clone of the particular branch in a repository.
 
-55. 
+55. git stash
+//this command is you to temporarily save changes to your data in current branch and let you switch
+//to another branch
+
+56. git stash apply
+//this command is used to apply the changes that were stashed 
+
+57. git stash drop 
+// this command is used to delete the stash from stash history list
+
+
+58.git stash list
+//this command is used to fetch the list of all the stash on a particular branch
+
+59. git stash apply stash@{index}
+//this command is used to apply a particular stash which we have to apply on our project and we
+//can select is from the stash list
+
+
+60. git stash pop
+//this command applies the stash changes present on 0th index of the stash list 
+//and removed the applied element from the list
+
+61. git stash clear
+// this command is used to remove all the stash history from the list stashes.
+
+62. git ls-files -i --exclude-standard  
+//this command will fecth the files taht are placed in .gitignore files
+
+63. git show HEAD
+git show
+//this command shows where the head of the branch is.
+
+64. git show 'commit id'
+//this command shows the detached head of the branch.
+
+65. git remote remove origin
+//this command will remove the remote origin
+
+66. git remote rename <oldname><newname>
+//this command is used to change the name of remote server.
+
+67.git remote show
+//this command is used to show the name of the remote server or origin.
+
+
+68. git remote set-url <remote name><newURL>  
+//this command is used to change the remote URL name by using the name of the remote origin.
+
+69.git branch --list
+//this command is used to get the list of branches
+
+70. git push origin -delete <branchname>
+//this command is used to delete the remote branch
+
+71. git branch -m <oldname><newname>
+//this command is used to rename the branches
+
+
+72. git rebase <branch name>
+//this command is used to rebase current branch with the provided branch
+NOTE:rebasing is done on a different branch so as to preserve the comment histories of given branch.
+We have to name that branch before checking out into another branch.
+
+73. git rebase-- abort
+//this command is used to abort the rebasing applied on the current branch and restores the branch
+to its initial state.
+
+74. git rebase --continue
+//this command is used to continue the rebasing is it is stopped due to any error or conflicts.
+
+75.git rebase --skip
+//The above command is used to continue with the changes you made.
+ //If you want to skip the change, you can skip with this command.
+
+Merging is a safe option that preserves the entire history of
+ your repository, while rebasing creates a
+ linear history by moving your feature branch onto the tip of main .
+
+***********learning resources************************
+https://learngitbranching.js.org/
+//this command will help in renaming the  locally.
+

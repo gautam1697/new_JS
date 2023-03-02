@@ -125,3 +125,59 @@ function x(){
 
 var z=x();
 z();
+
+//_____________________________________________________________________________________________________________
+
+
+// const e = 10;
+// function sum(a) {
+//   return function sum2(b) {
+//     return function sum3(c) {
+//       return function sum4(d) {
+//         return a + b + c + d + e;
+//       };
+//     };
+//   };
+// }
+
+// const sum2 = sum(1);
+// const sum3 = sum2(2);
+// const sum4 = sum3(3);
+// const result = sum4(4);
+// c=result
+// console.log(c,result);
+
+// function multiply(x,y){
+//     return x*y
+// }
+// function square(x){
+//     return multiply(x,x)
+// }
+// console.log(square(3))
+
+// let x=4
+// function hel(){
+//     var y=3
+//     function hev(){
+//         console.log(x)
+//     }
+//   return hev;
+// }
+// hel()()
+// First fullName variable defined in the global scope:
+// const fullName = "1";
+
+// Nested functions containing two more fullName variables:
+// function profile() {
+// //   const fullName = "2";
+//   function sayName() {
+//     // const fullName = "3";
+//     function writeName() {
+//       return fullName;
+//     }
+//     return writeName();
+//   }
+//   return sayName();
+// }
+// console.log(profile())
+
